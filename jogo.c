@@ -4,20 +4,20 @@
 int main()
 {
     int num1, num2, pontos;
-    char jd1, jd2, resp;
+    char jd1[20], jd2[20], resp; //o '[]' está sendo usado p/ delimitar o caracter
     
     pontos = 100;
     
     printf("Bem-vindos ao jogo de adivinhação\n\n");
     printf("Escreva o nome do jogador 1: ");
-    scanf("%c", &jd1);
+    scanf("%s", jd1); //%s é para string e não é necessario '&'
     
-    printf("\nEscreva o nome do jogador 2:");
-    scanf("%c", &jd2);
+    printf("Escreva o nome do jogador 2:");
+    scanf("%s", jd2);
     
     system("clear"); //limpa a tela
     
-    printf("\nPor favor, %c, digite um número: ", jd1);
+    printf("\nPor favor, %s, digite um número: ", jd1);
     scanf("%d", &num1);
     
     system("clear");
@@ -41,4 +41,6 @@ int main()
         printf("\n\nTente novamente: ");
         scanf("%d", &num2);
     }
+    
+    return 0;
 }
